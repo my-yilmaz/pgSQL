@@ -36,33 +36,33 @@ insert into ogrenciler values(126, 'Harun Reşit', 'Isparta', 100);
 
 --SORU1: ogrenciler tablosundaki tum sutunlardaki verileri listeleyiniz
 
-select * from ogrenciler;
+SELECT * FROM ogrenciler;
 
 
 
 --SORU2: ogrenciler tablosundaki 'isim' sutunundaki verileri listeleyiniz
 
-select isim from ogrenciler;
+SELECT isim from ogrenciler;
 
 
 
 
 --SORU3: ogrenciler tablosundaki 'adres' sutunundaki verileri listeleyiniz
 
-select adres from ogrenciler;
+SELECT adres from ogrenciler;
 
 
 
 --SORU4: ogrenciler tablosundaki 'sinav_notu' sutunundaki verileri listeleyiniz
 
-select sinav_notu from ogrenciler;
+SELECT sinav_notu from ogrenciler;
 
 
 
 --SORU5: ogrenciler tablosundaki 'isim' ve 'sinav_notu' sutunundaki verileri listeleyiniz
 
-select isim,sinav_notu from ogrenciler;
 
+SELECT isim,sinav_notu from ogrenciler;
 
 
 
@@ -77,7 +77,7 @@ WHERE ==> Şart belirtmemiz gerektiginde kullanılır.
 
 --SORU6: ogrenciler tablosundaki sinav_notu 80'den büyük olan öğrencilerin tüm bilgilerini listele
 
-select * from ogrenciler where sinav_notu>80;
+select * from ogrenciler where sinav_notu>60;
 
 
 
@@ -91,20 +91,20 @@ select * from ogrenciler where adres='Ankara';
 
 --SORU8: ogrenciler tablosundaki sinav_notu 85 ve adres'i 'Ankara' olan öğrenci isim'ini listele
 
-select isim from ogrenciler where sinav_notu=85 and adres='Ankara';
 
+select * from ogrenciler where adres='Ankara' and sinav_notu=85;
 
 
 
 --SORU9: ogrenciler tablosundaki sinav_notu 65 veya 85 olan ogrencilerin tüm bilgilerini listele
 
-  select * from ogrenciler where sinav_notu=65 or sinav_notu=85;
+ select * from ogrenciler where sinav_notu=65 or sinav_notu=85; 
 
 
 
 
 -- İn ==> Birden fazla ifade ile tanımlayabilecegimiz durumları in komutuyla yazabiliriz
-
+select * from ogrenciler where sinav_notu in(65,85);
 /*
  2.YOL
 
@@ -131,8 +131,9 @@ select * from ogrenciler where sinav_notu not in(65,85);
 --SORU11: ogrenciler tablosunda sinav_notu 65 ve 85 arasında olan ogrencilerin tüm bilgilerini listele
 
 
-  select * from ogrenciler where sinav_notu>=65 and sinav_notu<=85;
+ select * from ogrenciler where sinav_notu>64 and sinav_notu<86; 
 
+select * from ogrenciler where sinav_notu between 65 and 85;
 
 -- between ==> Belirttigimiz iki veri arasındaki bilgileri getirir.
 
@@ -149,7 +150,7 @@ select * from ogrenciler where sinav_notu not in(65,85);
 
 
 
- select isim,sinav_notu from ogrenciler where sinav_notu not between 75 and 90;
+select * from ogrenciler where sinav_notu not between 75 and 90;
 
 
 
